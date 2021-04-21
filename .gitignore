@@ -9,3 +9,5 @@ hgettext
 messages.po
 text-format/
 dist/
+.stack-work/
+stack.yaml.lock

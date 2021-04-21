@@ -1,17 +1,19 @@
-resolver: lts-8.16
+resolver: lts-17.9
 
 packages: 
   - '.'
-  - location:
-      git: https://github.com/portnov/text-format-heavy.git
-      commit: master
-    extra-dep: true
-  - location:
-      git: https://github.com/portnov/haskell-gettext.git
-      commit: master
-    extra-dep: true
+  # - location:
+  #     git: https://github.com/portnov/text-format-heavy.git
+  #     commit: master
+  #   extra-dep: true
+  # - location:
+  #     git: https://github.com/portnov/haskell-gettext.git
+  #     commit: master
+  #   extra-dep: true
 
-extra-deps: []
+extra-deps:
+  - haskell-gettext-0.1.2.0@sha256:e16fc0521aa6cd53febb7916b178c43afcc7ea7c93cb70818f4ded6cc3cdad98,2930
+  - text-format-heavy-0.1.5.3@sha256:abbc5f0c4883328df4058cf2145820eaf41c35d1af9cdacc50fc2e4c2bd15dda,2755
 
 # Override default flag values for local packages and extra-deps
 flags: {}
