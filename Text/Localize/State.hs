@@ -14,6 +14,7 @@ module Text.Localize.State
   ) where
 
 import Control.Applicative
+import Control.Monad.Fail.Compat
 import Control.Monad.State
 import Control.Monad.Trans
 
@@ -31,7 +32,7 @@ data LocState = LocState {
 newtype LocalizeT m a = LocalizeT {
     unLocalizeT :: StateT LocState m a
   }
-  deriving (Functor, Applicative, Monad, MonadIO, MonadState LocState)
+  deriving (Functor, Applicative, Monad, MonadIO, MonadState LocState, MonadFail)
 
 instance Monad m => Localized (LocalizeT m) where
   getTranslations = gets lsTranslations
